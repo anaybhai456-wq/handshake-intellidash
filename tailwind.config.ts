@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				network: {
+					client: 'hsl(var(--network-client))',
+					server: 'hsl(var(--network-server))',
+					packet: 'hsl(var(--network-packet))',
+					success: 'hsl(var(--network-success))',
+					warning: 'hsl(var(--network-warning))',
+					error: 'hsl(var(--network-error))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +92,52 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'packet-flow': {
+					'0%': { 
+						transform: 'translateX(0) scale(1)',
+						opacity: '1'
+					},
+					'50%': { 
+						transform: 'translateX(50%) scale(1.2)',
+						opacity: '0.8'
+					},
+					'100%': { 
+						transform: 'translateX(100%) scale(1)',
+						opacity: '1'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 20px hsl(var(--primary))',
+						opacity: '1'
+					},
+					'50%': { 
+						boxShadow: '0 0 40px hsl(var(--primary)), 0 0 60px hsl(var(--primary))',
+						opacity: '0.8'
+					}
+				},
+				'state-change': {
+					'0%': { 
+						transform: 'scale(1)',
+						backgroundColor: 'hsl(var(--muted))'
+					},
+					'50%': { 
+						transform: 'scale(1.05)',
+						backgroundColor: 'hsl(var(--primary))'
+					},
+					'100%': { 
+						transform: 'scale(1)',
+						backgroundColor: 'hsl(var(--network-success))'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'packet-flow': 'packet-flow 2s ease-in-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'state-change': 'state-change 1s ease-in-out forwards'
 			}
 		}
 	},
