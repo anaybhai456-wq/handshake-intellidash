@@ -23,7 +23,7 @@ export const NetworkNode = ({ type, state, sequenceNumber, className }: NetworkN
   
   return (
     <Card className={cn(
-      "p-6 bg-card/50 backdrop-blur-sm border-border/50 transition-all duration-500",
+      "p-6 glass-card transition-all duration-500",
       state === 'ESTABLISHED' && "shadow-lg shadow-network-success/20",
       className
     )}>
