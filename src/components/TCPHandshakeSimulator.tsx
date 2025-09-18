@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTCPSimulator } from "@/hooks/useTCPSimulator";
 import { Separator } from "@/components/ui/separator";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Network, Info } from "lucide-react";
 
 export const TCPHandshakeSimulator = () => {
@@ -20,10 +21,13 @@ export const TCPHandshakeSimulator = () => {
   } = useTCPSimulator();
 
   return (
-    <div className="min-h-screen bg-background p-6">
+    <div className="min-h-screen p-6">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-4 relative">
+          <div className="absolute top-0 right-0">
+            <ThemeToggle />
+          </div>
           <div className="flex items-center justify-center space-x-3">
             <Network className="w-8 h-8 text-primary" />
             <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -36,7 +40,7 @@ export const TCPHandshakeSimulator = () => {
         </div>
 
         {/* Main Visualization */}
-        <Card className="p-8 bg-card/30 backdrop-blur-sm border-border/50">
+        <Card className="p-8 glass-card">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             {/* Client */}
             <NetworkNode
@@ -93,7 +97,7 @@ export const TCPHandshakeSimulator = () => {
         </div>
 
         {/* Information Panel */}
-        <Card className="p-6 bg-card/30 backdrop-blur-sm border-border/50">
+        <Card className="p-6 glass-card">
           <div className="flex items-start space-x-4">
             <Info className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div className="space-y-4">
